@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Items item = new Items();
                 item.itemID = row;
+                item.title = mEtListTitle.getText().toString();
                 item.itemName = mEtListItem.getText().toString();
                 item.isChecked = false;
 
@@ -157,11 +158,10 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
-            startActivity(intent);
+
 
         }
-
-
+        Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+        startActivityForResult(intent,12345);
     }
 }

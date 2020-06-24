@@ -1,5 +1,6 @@
 package com.appstone.maybatchtasksample;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,5 +43,13 @@ public class HomeActivity extends AppCompatActivity {
         ArrayList<Items> items = dbHelper.getDataFromDatabase(dbHelper.getReadableDatabase());
         CustomAdapter customAdapter = new CustomAdapter(this,items);
         recyclerView.setAdapter(customAdapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 12345){
+            getDataFromDatabase();
+        }
     }
 }
