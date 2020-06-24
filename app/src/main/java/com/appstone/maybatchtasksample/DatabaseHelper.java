@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private Context context;
 
 
-    public static String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COL_ID + " INTEGER PRIMARY KEY," + COL_TITLE + " TEXT," + COL_ITEM + " TEXT)";
+    public static String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COL_TITLE + " TEXT," + COL_ITEM + " TEXT)";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -44,7 +44,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     void addValueToDatabase(Items items){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(COL_ID,items.itemID);
         cv.put(COL_ITEM,items.itemName);
         cv.put(COL_TITLE,items.title);
 

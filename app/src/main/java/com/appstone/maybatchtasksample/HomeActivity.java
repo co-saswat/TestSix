@@ -2,6 +2,7 @@ package com.appstone.maybatchtasksample;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -32,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
         dbHelper = new DatabaseHelper(this);
         getDataFromDatabase();
     }
