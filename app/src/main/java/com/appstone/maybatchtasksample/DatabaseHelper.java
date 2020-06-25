@@ -65,6 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 items_list.itemID = cursor.getInt(cursor.getColumnIndex(COL_ID));
                 items_list.title = cursor.getString(cursor.getColumnIndex(COL_TITLE));
                 items_list.itemName = cursor.getString(cursor.getColumnIndex(COL_ITEM));
+                items.add(items_list);
 
             }while (cursor.moveToNext());
 
